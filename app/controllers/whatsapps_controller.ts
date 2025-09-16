@@ -48,7 +48,6 @@ export default class WhatsAppController {
   // Enviar mensagem (POST /api/whatsapp/send)
   public async sendMessage({ request, response }: HttpContext) {
     const { to, type, template } = request.body()  // Ajuste conforme payload
-
     try {
       const apiUrl = `https://graph.facebook.com/v22.0/${process.env.WHATSAPP_PHONE_ID}/messages`
       const headers = {
@@ -71,6 +70,7 @@ export default class WhatsAppController {
         status: 'sent',
       })
 
+      console.log('Mensagem enviada:', res.data)
       return response.status(200).json(res.data)
     } catch (error) {
       console.log(error)
