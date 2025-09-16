@@ -1,18 +1,12 @@
 import { defineConfig } from '@adonisjs/cors'
 
-/**
- * Configuration options to tweak the CORS policy. The following
- * options are documented on the official documentation website.
- *
- * https://docs.adonisjs.com/guides/security/cors
- */
 const corsConfig = defineConfig({
   enabled: true,
-  origin: ['https://sacip.vercel.app/', 'https://sacip.vercel.app', 'localhost', '*'],
+  origin: ['http://localhost:3000', 'https://sacip.vercel.app'], // Remove '*' and trailing slash
   methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'],
   headers: true,
   exposeHeaders: [],
-  credentials: true,
+  credentials: true, // Keep if you need cookies/auth headers
   maxAge: 90,
 })
 
