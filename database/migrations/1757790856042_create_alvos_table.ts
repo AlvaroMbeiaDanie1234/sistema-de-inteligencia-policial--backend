@@ -8,7 +8,7 @@ export default class extends BaseSchema {
       table.increments('id')
 
       table.string('nome')
-      table.string('numero_identificacao').unique()
+      table.string('numero_identificacao')
       table.string('telefone')
       table.string('email')
       table.enum('genero', ['Masculino', 'Feminino', 'Outro'])
