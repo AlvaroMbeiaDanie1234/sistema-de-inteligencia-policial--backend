@@ -11,6 +11,9 @@ export default class extends BaseSchema {
       table.string('numero_identificacao')
       table.string('telefone')
       table.string('email')
+      table.enum('perigosidade', ['Baixo', 'Médio', 'Alto'])
+      table.string('foto')
+      table.enum('status', ['Ativo', 'Inativo', 'Procurado'])
       table.enum('genero', ['Masculino', 'Feminino', 'Outro'])
       
 

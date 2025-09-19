@@ -18,7 +18,17 @@ export default class Alvo extends BaseModel {
   declare email: string
 
   @column()
+  declare perigosidade: 'Baixo' | 'Médio' | 'Alto'
+
+  @column()
   declare genero: 'Masculino' | 'Feminino' | 'Outro'
+
+
+  @column()
+  declare foto: string
+
+  @column()
+  declare status: 'Ativo' | 'Inativo' | 'Procurado'
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
