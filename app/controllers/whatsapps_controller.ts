@@ -75,7 +75,6 @@ export default class WhatsAppController {
     } catch (error) {
       console.log(error)
       return response.status(500).json({ error: error.message })
-      
     }
   }
 

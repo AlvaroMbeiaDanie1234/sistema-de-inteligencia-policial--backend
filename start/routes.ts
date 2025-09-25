@@ -1,6 +1,7 @@
 
 
 import AlvosController from '#controllers/alvos_controller'
+import MotorDeBuscasController from '#controllers/motor_de_buscas_controller'
 import OsintSearchController from '#controllers/osint_searches_controller'
 import VerificacoaBisController from '#controllers/verificacoa_bis_controller'
 import WhatsAppController from '#controllers/whatsapps_controller'
@@ -33,6 +34,16 @@ router.group(() => {
 router.group(() => {
   router.get('/consultar', [VerificacoaBisController, 'index'])
 }).prefix('/api/bi')
+
+
+
+router.group(() => {
+  router.get('', [MotorDeBuscasController, 'index'])
+  router.post('/registar', [MotorDeBuscasController, 'store'])
+  router.get('/mostrar/:id', [MotorDeBuscasController, 'show'])
+  router.put('/atualizar/:id', [MotorDeBuscasController, 'update'])
+  router.get('/buscar', [MotorDeBuscasController, 'search'] )
+}).prefix('/api/motor-de-buscas')
 
 
 router.get('/api/search-osint', [OsintSearchController, 'search'])

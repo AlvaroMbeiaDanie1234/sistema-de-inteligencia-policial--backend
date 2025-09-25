@@ -21,11 +21,14 @@ export default await Env.create(new URL('../', import.meta.url), {
   WHATSAPP_PHONE_ID: Env.schema.string(),
   WHATSAPP_ACCESS_TOKEN: Env.schema.string(),
   WHATSAPP_VERIFY_TOKEN: Env.schema.string(),
+  TWITTER_BEARER_TOKEN: Env.schema.string(),
+
   /*
   |----------------------------------------------------------
   | Variables for configuring database connection
   |----------------------------------------------------------
   */
+ 
   DB_HOST: Env.schema.string({ format: 'host' }),
   DB_PORT: Env.schema.number(),
   DB_USER: Env.schema.string(),
